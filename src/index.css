@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f7f5f0;
+  --color-card: #ffffff;
+  --color-ink: #1f2430;
+  --color-muted: #6b6f7a;
+  --color-line: #e6e1d6;
+  --color-brand: #1d4e89;
+  --color-brand-soft: #e3ecf7;
+  --color-good: #2f7d4f;
+  --color-good-soft: #e3f3e8;
+  --color-warn: #b06a10;
+  --color-warn-soft: #fbefd9;
+  --color-bad: #b4322f;
+  --color-bad-soft: #fbe4e2;
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+.ipa {
+  font-family: "Segoe UI", "Lucida Sans Unicode", "Arial Unicode MS", sans-serif;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgb(180 50 47 / 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgb(180 50 47 / 0);
+  }
+}
+.recording {
+  animation: pulse-ring 1.2s ease-out infinite;
+}

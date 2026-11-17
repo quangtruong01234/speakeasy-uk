@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-electron/
+release/
+# Learner data, cached voice audio and the downloaded speech model stay local.
+data/
+*.log
+# Personal Claude Code settings
+.claude/settings.local.json

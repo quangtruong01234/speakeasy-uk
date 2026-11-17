@@ -1,0 +1,51 @@
+{
+  "name": "speakeasy-uk",
+  "productName": "SpeakEasy UK",
+  "version": "0.1.0",
+  "description": "Desktop app for learning English vocabulary by topic through listening and speaking, with a British voice and Claude as tutor.",
+  "private": true,
+  "type": "module",
+  "main": "dist-electron/main.mjs",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "node scripts/dev.mjs --web",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/build.mjs && electron .",
+    "dist": "node scripts/build.mjs && electron-builder --win --dir",
+    "import-words": "node scripts/import-words.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "build": {
+    "appId": "uk.speakeasy.app",
+    "files": [
+      "dist/**",
+      "dist-electron/**",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.2",
+    "msedge-tts": "^2.1.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "ts-fsrs": "^5.4.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "electron": "^45.3.3",
+    "electron-builder": "^26.18.0",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0"
+  }
+}
